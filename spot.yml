@@ -1,0 +1,29 @@
+- hosts: localhost   
+
+  tasks: 
+  
+  - amazon.aws.ec2: 
+
+      spot_price: 0.24 
+
+      spot_wait_timeout: 600 
+
+      region: eu-west-1
+
+      keypair: formation
+
+      group_id: sg-5d4dd42f
+
+      instance_type: t2.small 
+
+      image: ami-08bac620dc84221eb 
+
+      wait: yes 
+
+      vpc_subnet_id: subnet-2af88f4c
+
+      assign_public_ip: yes 
+
+      spot_launch_group: report_generators 
+
+      instance_initiated_shutdown_behavior: terminate
